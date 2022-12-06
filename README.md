@@ -1,49 +1,32 @@
-# What is this?
+# What is it?
 
-A simple scaffholding tool for creating a new project to be published to npm.  
-It provides a build command that will compile your code to a CommonJS Node 14.16 target, allowing named imports for CommonJS packages inside ESM files.  
-The package contains a simple "hello world" based on TypeScript, built on esbuild, tested through Jest and linted with ESLint and Prettier.  
-It also provides a Husky pre-commit hook to run the linter and tests before committing.
+This is a library for versioning given events. It's used to
+ensure that we are able to monitor the number of iterations of a given event and to
+ensure that we can re-build the original order.
 
-## What does it mean?
+# How does it work?
 
-If you try to run `npm run build` you will be able to import the `sayHello` function from the `index.js` file, both via `require` and `import` syntax.
+Just call the `getVersionedEvent` function with the event you want to version and it will return a new event with the versioning information.  
+the function expects to receive an object with the following properties:
 
-### Importing via `require`
+- `event` - the event you want to version
+- `payload` - the payload of the event
 
-```js
-const { sayHello } = require('my-package');
-```
+The return value is an object with the following properties:
 
-### Importing via `import`
+- `event` - the given event
+- `version` - the version of the event
+- `payload` - the payload of the event
 
-```js
-import { sayHello } from 'my-package';
-```
+# Other Info
 
-# Why?
+You can also call the `getNextEventVersion` function to get the next version of a given event.  
+By passing a `false` as the second argument, you can get the next version of the event without committing (saving it) in the function internal state.  
+You can also call the `getNextEventVersion` passing the `EVENT_VERSIONING_RESET_STRING` exported constant as the first argument to reset the internal state of the function and consequently resetting all saved version values.
 
-I got tired of copying and pasting the same files over and over again.  
-This is a simple tool to create a new project with the basic files needed to publish to npm.
+# ToDo
 
-# How can I personalize it?
-
-You can change the `package.json` file to your liking, bringing your own package name and description.  
-Please, remember to give me a star if you like the project!
-
-## How To Install?
-
-```bash
-git clone git://github.com/Cadienvan/npm-package-ts-scaffholding.git package_name
-cd package_name
-npm install
-```
-
-## What's Inside?
-
-- Typescript
-- Jest
-- Eslint
-- Prettier
-- Husky
-- Esbuild
+- [x] Add documentation
+- [x] Add POC
+- [x] Allow resetting
+- [x] Add tests
