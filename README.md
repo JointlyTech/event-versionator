@@ -4,6 +4,22 @@ This is a library for versioning given events. It's used to
 ensure that we are able to monitor the number of iterations of a given event and to
 ensure that we can re-build the original order.
 
+# How do I install it?
+
+You can install it by using the following command:
+
+```bash
+npm install @jointly/event-versionator
+```
+
+# Tests
+
+You can run the tests by using the following command:
+
+```bash
+npm test
+```
+
 # How does it work?
 
 Just call the `getVersionedEvent` function with the event you want to version and it will return a new event with the versioning information.  
@@ -23,10 +39,3 @@ The return value is an object with the following properties:
 You can also call the `getNextEventVersion` function to get the next version of a given event.  
 By passing a `false` as the second argument, you can get the next version of the event without committing (saving it) in the function internal state.  
 You can also call the `getNextEventVersion` passing the `EVENT_VERSIONING_RESET_STRING` exported constant as the first argument to reset the internal state of the function and consequently resetting all saved version values.
-
-# ToDo
-
-- [x] Add documentation
-- [x] Add POC
-- [x] Allow resetting
-- [x] Add tests

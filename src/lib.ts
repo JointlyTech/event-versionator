@@ -15,21 +15,20 @@ export const getNextEventVersion = (() => {
   };
 })();
 
+export type VersionedEvent = {
+  event: string;
+  payload: unknown;
+  version: number;
+};
+
 export const getVersionedEvent = ({
   event,
   payload
 }: {
   event: string;
   payload: unknown;
-}): {
-  event: string;
-  payload: unknown;
-  version: number;
-} => {
-  const eventObject = {
-    event,
-    version: getNextEventVersion(event, true),
-    payload
-  };
-  return eventObject;
-};
+}): VersionedEvent => ({
+  event,
+  version: getNextEventVersion(event, true),
+  payload
+});
