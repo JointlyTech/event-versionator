@@ -33,6 +33,15 @@ The return value is an object with the following properties:
 - `event` - the given event
 - `version` - the version of the event
 - `payload` - the payload of the event
+- `createdAt` - the date when the specific event version was created
+
+```js
+const { getVersionedEvent } = require('@jointly/event-versionator');
+getVersionedEvent({ event: 'ev1', payload: 'ev1-1' }); // { event: 'ev1', version: 1, payload: 'ev1-1', createdAt: '1970-01-01T14:00:00.000Z' }
+getVersionedEvent({ event: 'ev1', payload: 'ev1-2' }); // { event: 'ev1', version: 2, payload: 'ev1-2', createdAt: '1970-01-01T14:00:03.123Z' }
+getVersionedEvent({ event: 'ev1', payload: 'ev1-3' }); // { event: 'ev1', version: 3, payload: 'ev1-3', createdAt: '1970-01-01T14:00:06.246Z' }
+getVersionedEvent({ event: 'ev2', payload: 'ev2-1' }); // { event: 'ev2', version: 1, payload: 'ev2-1', createdAt: '1970-01-01T14:00:09.369Z' }
+getVersionedEvent({ event: 'ev2', payload: 'ev2-2' }); // { event: 'ev2', version: 2, payload: 'ev2-2', createdAt: '1970-01-01T14:00:12.492Z' }
 
 # Other Info
 
