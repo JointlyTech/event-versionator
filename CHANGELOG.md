@@ -1,3 +1,9 @@
+#### 1.0.2 (2022-12-15)
+
+##### Documentation Changes
+
+*  updated documentation ([975973a2](https://github.com/JointlyTech/event-versionator/commit/975973a2f35f530e7d402ca461270d9c6ad5d8e6))
+
 #### 1.0.1 (2022-12-15)
 
 ##### Documentation Changes
