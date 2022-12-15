@@ -1,3 +1,9 @@
+## 1.0.0 (2022-12-15)
+
+##### Other Changes
+
+*  changed functions input parameters + improved type checkings ([828e118b](https://github.com/JointlyTech/event-versionator/commit/828e118b91224ea3b59b0e67e6ed209790dc7ce8))
+
 #### 0.0.3 (2022-12-12)
 
 ##### Chores
