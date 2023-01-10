@@ -1,3 +1,9 @@
+#### 1.0.3 (2023-01-10)
+
+##### Refactors
+
+*  internal refactoring ([57322216](https://github.com/JointlyTech/event-versionator/commit/57322216a00a2b4c673010895ed1cc8c9dfdbb67))
+
 #### 1.0.2 (2022-12-15)
 
 ##### Documentation Changes
