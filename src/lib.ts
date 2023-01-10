@@ -1,25 +1,7 @@
+import { defaultEventVersionatorOptions } from './default';
+import { EventVersionatorInput, VersionedEvent, InputEvent } from './models';
+
 export const EVENT_VERSIONING_RESET_STRING = 'EVENT_VERSIONING_RESET_STRING';
-
-type EventVersionatorInput = {
-  event: string;
-  commit: boolean;
-};
-
-const defaultEventVersionatorOptions: EventVersionatorInput = {
-  event: '',
-  commit: true
-};
-
-export type VersionedEvent = InputEvent & {
-  version: number;
-  createdAt: Date;
-  payload: unknown;
-};
-
-export type InputEvent = {
-  event: string;
-  payload?: unknown;
-};
 
 export const getNextEventVersion = (() => {
   let internalVersioning = {};
